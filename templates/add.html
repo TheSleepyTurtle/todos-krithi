@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block main %}	
+	<div class="form-wrapper">
+	<div class="form">
+		<h3>Add a todo</h3>
+		<input type="text" id="todo__input__todo" placeholder="todo name">
+		<input type="text" id="todo__input__author" placeholder="todo author">
+		<button id="todo__submit" class="btn">Submit</button>
+	</div></div>
+	<script type="text/javascript">
+		var button = document.getElementById("todo__submit")
+		var input_todo = document.getElementById("todo__input__todo")
+		var input_author = document.getElementById("todo__input__author")
+		button.addEventListener("click", () => {
+			window.location.href = `/add/${input_todo.value}/${input_author.value}`
+		})
+	</script>
+{% endblock main %}
